@@ -2,18 +2,56 @@
   Key : 103b07ef04d782146176e5e9f5408e46
   */
 
-function getWeather(){
+/* Javascript web application using Dark Sky API Weather App */
+
+
+function userCoordInput(){
+  var userLat = document.getElementById("latitude").value;
+  var userLong= document.getElementById("longitude").value;
+  showWeather(userLat, userLong);
+}
+
+  function showWeather(latitude, longitude){
+    var url = "https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/"+ latitude + "," +longitude;
+    var url2 = 'https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/${latitude},${longitude}';
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.onload = function(){
+      if(request.status >= 200 && request.status < 400){
+      var data = JSON.parse(this.responseText);
+      console.log("poop");
+      console.log(data.timezone);
+    }
+    else{
+      console.log("Error");
+    };
+  };
+    request.onerror = function(){
+      console.log("Erorr");
+    };
+
+    request.send();
+}
+
+
+function getCoordinate(){
   if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(function(position){
-        var lat = position.coords.latitude;
-        var long = position.coords.longitude;
-        showWeather(lat,long);
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      document.getElementById("latitude").placeholder = latitude;
+      document.getElementById("longitude").placeholder = longitude;
+      document.getElementById("latitude").value = latitude;
+      document.getElementById("longitude").value = longitude;
     })
   }
   else {
     window.alert("Could not get location");
       }
-    }
+  }
+
+
+
 
 
 
