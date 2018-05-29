@@ -36,6 +36,10 @@ function userCoordInput(){
 function displayWeather(data){
   console.log(data.currently.summary);
   console.log(data.currently.temperature);
+  console.log(data.currently.humidity);
+  console.log(data.currently.pressure);
+  console.log(data.currently.windSpeed);
+
 
 
 
