@@ -19,19 +19,33 @@ function userCoordInput(){
     request.onload = function(){
       if(request.status >= 200 && request.status < 400){
       var data = JSON.parse(this.responseText);
-      console.log("poop");
-      console.log(data.timezone);
+      displayWeather(data);
     }
     else{
       console.log("Error");
     };
   };
     request.onerror = function(){
-      console.log("Erorr");
+      console.log("Error");
     };
 
     request.send();
 }
+
+
+function displayWeather(data){
+  console.log(data.currently.summary);
+  console.log(data.currently.temperature);
+
+
+
+}
+
+
+
+
+
+
 
 
 function getCoordinate(){
