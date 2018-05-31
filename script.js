@@ -21,6 +21,7 @@ function userCoordInput(){
       if(request.status >= 200 && request.status < 400){
       var data = JSON.parse(this.responseText);
       displayWeather(data);
+      console.log("poop");
     }
     else{
       console.log("Error");
@@ -34,7 +35,7 @@ function userCoordInput(){
 
 
 function displayWeather(data){
-  document.getElementById("curr-temp").innerHTML = celciusToggle(data.currently.temperature);
+  document.getElementById("curr-temp").innerHTML = toCelcius(data.currently.temperature);
   document.getElementById("curr-summary").innerHTML = data.currently.summary;
   document.getElementById("curr-humidity").innerHTML = convertHumidity(data.currently.humidity);
   document.getElementById("curr-windSpeed").innerHTML = data.currently.windSpeed+ " " + "mph";
@@ -50,7 +51,7 @@ function convertHumidity(data){
 function toCelcius(temp){
  var convert = (temp-32) * .556;
  convert = convert.toPrecision(2); 
- return convert + " " + "°C";
+ return convert + "°C";
 }
 
 

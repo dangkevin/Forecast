@@ -5,3 +5,8 @@
 body{
     margin: 0 auto;
 }
+
+#icons{
+    text-align: center;
+    border: 1px solid black;
+}
