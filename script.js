@@ -11,6 +11,7 @@ function userCoordInput(){
   showWeather(userLat, userLong);
 }
 
+
   function showWeather(latitude, longitude){
     var url = "https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/"+ latitude + "," +longitude;
     var url2 = 'https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/${latitude},${longitude}';
@@ -28,26 +29,29 @@ function userCoordInput(){
     request.onerror = function(){
       console.log("Error");
     };
-
     request.send();
 }
 
 
 function displayWeather(data){
-  console.log(data.currently.summary);
-  console.log(data.currently.temperature);
-  console.log(data.currently.humidity);
-  console.log(data.currently.pressure);
-  console.log(data.currently.windSpeed);
-
-
-
-
+  document.getElementById("curr-temp").innerHTML = celciusToggle(data.currently.temperature);
+  document.getElementById("curr-summary").innerHTML = data.currently.summary;
+  document.getElementById("curr-humidity").innerHTML = convertHumidity(data.currently.humidity);
+  document.getElementById("curr-windSpeed").innerHTML = data.currently.windSpeed+ " " + "mph";
+  
 }
 
+function convertHumidity(data){
+  var num = data * 100; 
+  return num + "%";
+}
 
-
-
+/* °F -> °C */
+function toCelcius(temp){
+ var convert = (temp-32) * .556;
+ convert = convert.toPrecision(2); 
+ return convert + " " + "°C";
+}
 
 
 
