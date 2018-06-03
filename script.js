@@ -4,16 +4,20 @@
 
 /* Javascript web application using Dark Sky API Weather App */
 
+document.getElementById("searchBox").addEventListener("input", placeSearch);
 
-function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -33.8688, lng: 151.2195},
-    zoom: 13,
-    mapTypeId: 'roadmap'
+
+function placeSearch(){
+
+var input = document.getElementById("searchBox");
+var autocomplete = new google.maps.places.Autocomplete(input);
+
+google.maps.event.addListener(autocomplete,'place_changed', function(){
+var place = autocomplete.getPlace();
+document.getElementById("longitude").placeholder = place.geometry.location.lat();
+document.getElementById("latitude").placeholder = place.geometry.location.lng();
   });
- var input = document.getElementById('searchBox');
- var searchBox = new google.maps.places.SearchBox(input);
- map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+};
 
 
 function userCoordInput(){
@@ -50,18 +54,18 @@ function displayWeather(data){
   document.getElementById("curr-summary").innerHTML = data.currently.summary;
   document.getElementById("curr-humidity").innerHTML = convertHumidity(data.currently.humidity);
   document.getElementById("curr-windSpeed").innerHTML = data.currently.windSpeed+ " " + "mph";
-  
+
 }
 
 function convertHumidity(data){
-  var num = data * 100; 
+  var num = data * 100;
   return num + "%";
 }
 
 /* °F -> °C */
 function toCelcius(temp){
  var convert = (temp-32) * .556;
- convert = convert.toPrecision(2); 
+ convert = convert.toPrecision(2);
  return convert + "°C";
 }
 
