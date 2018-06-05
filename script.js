@@ -1,6 +1,5 @@
-/*https://api.darksky.net/forecast/[key]/[latitude],[longitude]
-  Key : 103b07ef04d782146176e5e9f5408e46
-  */
+
+
 
 /* Javascript web application using Dark Sky API Weather App */
 
@@ -8,14 +7,15 @@ document.getElementById("searchBox").addEventListener("input", placeSearch);
 
 
 function placeSearch(){
-
 var input = document.getElementById("searchBox");
 var autocomplete = new google.maps.places.Autocomplete(input);
 
 google.maps.event.addListener(autocomplete,'place_changed', function(){
 var place = autocomplete.getPlace();
-document.getElementById("longitude").placeholder = place.geometry.location.lat();
-document.getElementById("latitude").placeholder = place.geometry.location.lng();
+document.getElementById("longitude").placeholder = place.geometry.location.lng();
+document.getElementById("latitude").placeholder = place.geometry.location.lat();
+document.getElementById("longitude").value = place.geometry.location.lng();
+document.getElementById("latitude").value = place.geometry.location.lat();
   });
 };
 
@@ -93,25 +93,3 @@ function getCoordinate(){
 
 
 
-
-
-
-/*var button = document.getElementById("clicky");
-var latitude;
-var longitude;
-var url = "https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/37.8267,-122.4233"
-button.addEventListener("click",function(){
-var request = new XMLHttpRequest();
-request.open('GET', url, true);
-request.onload = function(){
-  var data = JSON.parse(this.response);
-    renderHTML(data);
-  };
-  request.send();
-});
-
-
-function renderHTML(input){
-    console.log(input.latitude);
-    console.log(input.longitude);
-  }*/
