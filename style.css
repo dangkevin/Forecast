@@ -8,5 +8,9 @@ body{
 
 #icons{
     text-align: center;
-    border: 1px solid black;
+}
+
+#searchBox{
+    margin: 0 auto;
+    float: center;
 }

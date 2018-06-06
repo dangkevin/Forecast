@@ -17,17 +17,14 @@
     <a id = "curr-humidity"> -- </a>
     <a id = "curr-windSpeed"> -- </a>
     </div>
-    <div class="col-3">
-    <input id = "latitude" class="form-control" type = "text"  name = "Latitude" placeholder= "e.g 34.0522">
-    </div>
-    <div class="col-3">
-    <input id = "longitude" class="form-control" type = "text" name = "Longitude" placeholder="e.g -118.2437">
-    </div>
-    <div class="col-3">
-        <input id = "searchBox" class="form-control" type = "text" onclick="placeSearch()" name = "location" placeholder="e.g Los Angeles, CA">
-    </div>
-    <button id = "clicky" class="btn btn-dark" onclick="userCoordInput()"> Click here </button>
-    <button id = "getCoordinate" class="btn btn-light" onclick = "getCoordinate()">Get coordinate </button>
+    <div class="input-group">
+      <div class = "col-4">
+        <input id = "searchBox" class="form-control" type = "text" name = "location" placeholder="e.g Los Angeles, CA">
+        <span class = "input-group-btn">
+        <button id = "clicky" class="btn btn-dark" onclick="call()"> Click here </button>
+        </span>
+      </div>
+  </div>
   </body>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <script type = "text/javascript" src = "script.js"></script>

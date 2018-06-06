@@ -5,26 +5,23 @@
 
 document.getElementById("searchBox").addEventListener("input", placeSearch);
 
+var globalLong;
+var globalLat;
 
 function placeSearch(){
 var input = document.getElementById("searchBox");
 var autocomplete = new google.maps.places.Autocomplete(input);
-
 google.maps.event.addListener(autocomplete,'place_changed', function(){
 var place = autocomplete.getPlace();
-document.getElementById("longitude").placeholder = place.geometry.location.lng();
-document.getElementById("latitude").placeholder = place.geometry.location.lat();
-document.getElementById("longitude").value = place.geometry.location.lng();
-document.getElementById("latitude").value = place.geometry.location.lat();
+globalLong = place.geometry.location.lng();
+globalLat = place.geometry.location.lat();
   });
 };
 
-
-function userCoordInput(){
-  var userLat = document.getElementById("latitude").value;
-  var userLong= document.getElementById("longitude").value;
-  showWeather(userLat, userLong);
+function call(){
+  showWeather(globalLat, globalLong);
 }
+
 
 
   function showWeather(latitude, longitude){
@@ -36,7 +33,7 @@ function userCoordInput(){
       if(request.status >= 200 && request.status < 400){
       var data = JSON.parse(this.responseText);
       displayWeather(data);
-      console.log("poop");
+      console.log("Success");
     }
     else{
       console.log("Error");
@@ -72,7 +69,7 @@ function toCelcius(temp){
 
 
 
-function getCoordinate(){
+/*function getCoordinate(){
   if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(function(position){
       var latitude = position.coords.latitude;
@@ -86,7 +83,7 @@ function getCoordinate(){
   else {
     window.alert("Could not get location");
       }
-  }
+  } */
 
 
 
