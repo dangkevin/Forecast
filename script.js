@@ -1,6 +1,3 @@
-
-
-
 /* Javascript web application using Dark Sky API Weather App */
 
 document.getElementById("searchBox").addEventListener("input", placeSearch);
@@ -84,9 +81,3 @@ function toCelcius(temp){
     window.alert("Could not get location");
       }
   } */
-
-
-
-
-
-
