@@ -6,8 +6,12 @@ var globalLong;
 var globalLat;
 
 function placeSearch(){
+
+  var options = {
+    types: ['(cities)']
+   };
 var input = document.getElementById("searchBox");
-var autocomplete = new google.maps.places.Autocomplete(input);
+var autocomplete = new google.maps.places.Autocomplete(input, options);
 google.maps.event.addListener(autocomplete,'place_changed', function(){
 var place = autocomplete.getPlace();
 globalLong = place.geometry.location.lng();
@@ -17,6 +21,7 @@ globalLat = place.geometry.location.lat();
 
 function call(){
   showWeather(globalLat, globalLong);
+  document.getElementById("city").innerHTML = document.getElementById("searchBox").value;
 }
 
 
