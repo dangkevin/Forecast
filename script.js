@@ -49,7 +49,7 @@ function call(){
 
 
 function displayWeather(data){
-  document.getElementById("curr-temp").innerHTML = toCelcius(data.currently.temperature);
+  document.getElementById("curr-temp").innerHTML = (data.currently.temperature);
   document.getElementById("curr-summary").innerHTML = data.currently.summary;
   document.getElementById("curr-humidity").innerHTML = convertHumidity(data.currently.humidity);
   document.getElementById("curr-windSpeed").innerHTML = data.currently.windSpeed+ " " + "mph";
