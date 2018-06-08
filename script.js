@@ -25,7 +25,6 @@ function call(){
 }
 
 
-
   function showWeather(latitude, longitude){
     var url = "https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/"+ latitude + "," +longitude;
     var url2 = 'https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/${latitude},${longitude}';
@@ -49,7 +48,9 @@ function call(){
 
 
 function displayWeather(data){
-  document.getElementById("curr-temp").innerHTML = (data.currently.temperature);
+  var precision = data.currently.temperature;
+  precision = precision.toPrecision(2);
+  document.getElementById("curr-temp").innerHTML = precision;
   document.getElementById("curr-summary").innerHTML = data.currently.summary;
   document.getElementById("curr-humidity").innerHTML = convertHumidity(data.currently.humidity);
   document.getElementById("curr-windSpeed").innerHTML = data.currently.windSpeed+ " " + "mph";
