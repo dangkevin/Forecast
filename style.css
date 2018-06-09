@@ -1,18 +1,16 @@
-.rounded{
-    border-radius: 1rem;
-}
-
 
 .header{
+    color: white;
     text-align: center;
-    color: #FAFAFA;
 }
 
 body{
-    background: #2980B9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin: 0 auto;
+    margin: 0 auto; 
+    background: #1c92d2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
 }
 
 #icons{
@@ -26,12 +24,10 @@ body{
 #curr-temp{
     font-size: 5em;
 }
-
 #searchBox{
     border-radius: 4rem;
 }
-
 #clicky{
-    margin-left: 0.3rem;
-    border-radius: 4rem;
+margin-left: 0.3rem;
+border-radius: 4rem;
 }
