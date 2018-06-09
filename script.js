@@ -51,7 +51,7 @@ function call(){
 function displayWeather(data){
   var precise = data.currently.temperature;
   precise = precise.toPrecision(2);
-  document.getElementById("curr-temp").innerHTML = precise;
+  document.getElementById("curr-temp").innerHTML = precise + "°F";
   document.getElementById("curr-summary").innerHTML = data.currently.summary;
   document.getElementById("curr-humidity").innerHTML = convertHumidity(data.currently.humidity);
   document.getElementById("curr-windSpeed").innerHTML = data.currently.windSpeed+ " " + "mph";
