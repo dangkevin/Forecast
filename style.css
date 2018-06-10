@@ -1,8 +1,9 @@
 
 .header{
-    margin-top: 4rem;
-    color: white;
+    margin-top: 5rem;
+    color:#F5F5F5;
     text-align: center;
+    font-family:'Nanum Gothic', sans-serif;
 }
 
 body{
@@ -10,16 +11,20 @@ body{
     background: #1c92d2;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-
 }
 
-#icons{
-    text-align: center;
+.container{
+    margin-top: 3rem;
+    font-size: 1.5rem;
 }
+
+.spacing{
+    padding-top: 2rem;
+}
+
 
 .input-wrap{
-    margin-top: 20%;
+    margin-top: 6rem;
 }
 
 #curr-temp{
@@ -32,3 +37,4 @@ body{
 margin-left: 0.3rem;
 border-radius: 4rem;
 }
+

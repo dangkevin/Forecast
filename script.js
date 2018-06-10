@@ -53,8 +53,8 @@ function displayWeather(data){
   precise = precise.toPrecision(2);
   document.getElementById("curr-temp").innerHTML = precise + "°F";
   document.getElementById("curr-summary").innerHTML = data.currently.summary;
-  document.getElementById("curr-humidity").innerHTML = convertHumidity(data.currently.humidity);
-  document.getElementById("curr-windSpeed").innerHTML = data.currently.windSpeed+ " " + "mph";
+  document.getElementById("curr-humidity").innerHTML = "Humidity:" + " " + convertHumidity(data.currently.humidity);
+  document.getElementById("curr-windSpeed").innerHTML ="Wind Speed:" + " " +  data.currently.windSpeed+ " " + "mph";
 
 }
 
