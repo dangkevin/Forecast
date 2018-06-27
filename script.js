@@ -27,7 +27,7 @@ function call(){
 
 
   function showWeather(latitude, longitude){
-    var url = "https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/"+ latitude + "," +longitude;
+    var url = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/"+ latitude + "," +longitude;
     var url2 = 'https://api.darksky.net/forecast/103b07ef04d782146176e5e9f5408e46/${latitude},${longitude}';
     var request = new XMLHttpRequest();
     request.open('GET', url, true);
@@ -55,7 +55,20 @@ function displayWeather(data){
   document.getElementById("curr-summary").innerHTML = data.currently.summary;
   document.getElementById("curr-humidity").innerHTML = "Humidity:" + " " + convertHumidity(data.currently.humidity);
   document.getElementById("curr-windSpeed").innerHTML ="Wind Speed:" + " " +  data.currently.windSpeed+ " " + "mph";
+  console.log(data.currently.icon);
+  whichIcon(data.currently.icon);
 
+}
+
+/*clear-day, clear-night, rain, snow, sleet, wind, fog, 
+ cloudy, partly-cloudy-day, or partly-cloudy-night*/
+function whichIcon(icon){
+  if(icon == "clear-day"){
+    document.getElementById("curr-icon").src = "Sun.svg";
+  }
+  if(icon == "rain"){
+    document.getElementById("curr-icon").src = "Cloud-Drizzle.svg";
+  }
 }
 
 function convertHumidity(data){
