@@ -8,9 +8,10 @@
 
 body{
     margin: 0 auto; 
-    background: #1c92d2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 .container{
@@ -36,5 +37,9 @@ body{
 #clicky{
 margin-left: 0.3rem;
 border-radius: 4rem;
+}
+
+#curr-icon{
+    height: 200px;
 }
 

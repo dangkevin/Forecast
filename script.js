@@ -55,7 +55,6 @@ function displayWeather(data){
   document.getElementById("curr-summary").innerHTML = data.currently.summary;
   document.getElementById("curr-humidity").innerHTML = "Humidity:" + " " + convertHumidity(data.currently.humidity);
   document.getElementById("curr-windSpeed").innerHTML ="Wind Speed:" + " " +  data.currently.windSpeed+ " " + "mph";
-  console.log(data.currently.icon);
   whichIcon(data.currently.icon);
 
 }
@@ -64,11 +63,43 @@ function displayWeather(data){
  cloudy, partly-cloudy-day, or partly-cloudy-night*/
 function whichIcon(icon){
   if(icon == "clear-day"){
-    document.getElementById("curr-icon").src = "Sun.svg";
+    document.getElementById("curr-icon").src = "icons/Sun.svg";
   }
+  if(icon == "clear-night"){
+    document.getElementById("curr-icon").src = "icons/Moon.svg";
+  }
+
   if(icon == "rain"){
-    document.getElementById("curr-icon").src = "Cloud-Drizzle.svg";
+    document.getElementById("curr-icon").src = "icons/Cloud-Drizzle.svg";
   }
+  if(icon == "snow"){
+    document.getElementById("curr-icon").src = "icons/Snowflake.svg";
+  }
+
+  if(icon == "sleet"){
+    document.getElementById("curr-icon").src = "icons/Cloud-hail.svg";
+  }
+
+  if(icon == "wind"){
+    document.getElementById("curr-icon").src = "icons/Wind.svg";
+  }
+
+  if(icon == "fog"){
+    document.getElementById("curr-icon").src = "icons/Cloud-fog";
+  }
+
+  if(icon == "cloudy"){
+    document.getElementById("curr-icon").src = "icons/Cloud.svg";
+  }
+
+  if(icon == "partly-cloudy-day"){
+    document.getElementById("curr-icon").src = "icons/Cloud-Sun.svg"
+  }
+
+  if(icon == "partly-cloudy-night"){
+    document.getElementById("curr-icon").src = "icons/Cloud-Moon.svg";
+  }
+
 }
 
 function convertHumidity(data){
